@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa7d8a11-9de7-416e-bb94-8fd65346b86f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="informe"/>
+	<queryString language="XLS">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Nombre y Apellidos" class="java.lang.String"/>
+	<field name="Especialidad" class="java.lang.String"/>
+	<field name="Genero" class="java.lang.String"/>
+	<variable name="num_mujeres" class="java.lang.Integer" resetType="Master" calculation="Sum">
+		<variableDescription><![CDATA[Numero de Mujeres:]]></variableDescription>
+		<variableExpression><![CDATA[($F{Genero}.equals( "Mujer" ) ? 1:0) ]]></variableExpression>
+	</variable>
+	<variable name="num_hombres" class="java.lang.Integer" resetType="Master" calculation="Sum">
+		<variableDescription><![CDATA[Numero de Hombres:]]></variableDescription>
+		<variableExpression><![CDATA[($F{Genero}.equals( "Hombre" ) ? 1:0) ]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="137" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="10" width="240" height="116" uuid="8a7fe3f7-8af9-430a-b7c2-191cdb634b49"/>
+				<imageExpression><![CDATA["C:/Users/jmpal/Desktop/Proyectos Interfaces/logo-jjoo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="254" y="40" width="280" height="80" uuid="b97459db-8910-4cb8-a756-68cba5061ebf"/>
+				<textElement textAlignment="Center">
+					<font fontName="High Tower Text" size="26"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Atletas Españoles JJ.OO Tokyo 2020"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="0" width="130" height="30" uuid="c9149f9a-3fa3-4bfc-af5a-c4d541ce0f11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1187a2bc-e63b-4e57-b470-c73163e8ad35"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre y Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="0" width="100" height="30" uuid="fe9a3bca-c360-40cc-85ea-cb50ac3f1c8b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9fa41b7a-9996-4bf9-842a-98678cb0890c"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="84aaadfd-0dda-4d7a-bee0-b3f4ee1d4993">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b172f0f8-94ee-4d35-917a-11b647f2e3a7"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Genero]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="30" width="520" height="1" uuid="4ea575ea-94ef-462d-8d33-e8d2b6013294"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="39" y="5" width="138" height="30" uuid="adc73591-0889-4d5d-8290-9c344c718643">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1187a2bc-e63b-4e57-b470-c73163e8ad35"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre y Apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="8" width="100" height="24" uuid="34204a90-d5fc-4d25-8572-eaabcededdf0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9fa41b7a-9996-4bf9-842a-98678cb0890c"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Especialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="5" width="100" height="21" uuid="09b6513b-a554-4008-8c9c-5de0941bded6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b172f0f8-94ee-4d35-917a-11b647f2e3a7"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Genero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="5" width="25" height="20" uuid="9048ab18-d0b0-4f0c-aaca-29d574f2a2e2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="19" y="8" width="516" height="1" uuid="25696b13-778a-4410-9dc9-004500fb3112"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="390" y="10" width="70" height="20" uuid="c038dde4-b12d-49f9-ac73-a10084c069dc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="460" y="10" width="74" height="20" uuid="f668720c-2917-4384-ae38-8da789ad7a71"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="100" splitType="Stretch">
+			<textField>
+				<reportElement x="150" y="20" width="30" height="30" uuid="2d1fac2b-a903-4df3-a3e3-ef87557463ee"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{num_hombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="60" width="24" height="30" uuid="73789337-c4ee-44cf-a368-a6829e4d1ddb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{num_mujeres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="20" width="130" height="30" uuid="93256505-0bd2-4b43-bfa7-17605e327596"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Número de Hombres: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="60" width="130" height="30" uuid="b485be3a-5f56-4139-84cf-2e0f9a3d99e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Número de Mujeres: "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="14" y="10" width="516" height="1" uuid="b97be8df-6902-49d9-961b-7f115641df4b"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
